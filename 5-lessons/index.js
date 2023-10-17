@@ -21,8 +21,10 @@ const fs = require('fs');
 // console.log('file written!');
 
 
-fs.readFile('./start.txt', 'utf-8',(err,data)=> {
-console.log(data);
+fs.readFile('./start.txt', 'utf-8',(err,data1)=> {
+	fs.readFile(`./${data1}.txt`,'utf-8', (err,data2)=> {
+		console.log(data2);
+	});
 });
 
 console.log('will read file');
